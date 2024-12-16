@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" type="image/png" href="/favicon.png"/>
+    <title>Административная панель</title>
+    <link rel="stylesheet" href="css/admin.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>Административная панель</h1>
+    <div class="user-selection">
+        <label for="user">Выберите пользователя:</label>
+        <select id="user"></select>
+    </div>
+    <div class="currency-selection">
+        <label for="currency">Выберите валюту:</label>
+        <select id="currency"></select>
+    </div>
+    <div class="balance-update">
+        <label for="balance">Обновить баланс:</label>
+        <input type="number" id="balance" placeholder="Введите сумму" step="0.01">
+        <button id="updateBalance">Обновить</button>
+    </div>
+    <div class="bet-result">
+        <label for="event">Событие:</label>
+        <select id="event"></select><br>
+        <label for="actual_result">Результат:</label>
+        <select id="actual_result">
+            <option value="win1">Победа первой команды</option>
+            <option value="draw">Ничья</option>
+            <option value="win2">Победа второй команды</option>
+        </select><br>
+        <button id="updateResult">Обновить результат</button>
+    </div>
+</div>
+<script src="js/user.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
