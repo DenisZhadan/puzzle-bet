@@ -16,6 +16,12 @@ class BetController extends Controller
             $input = $this->getJson();
             $bet = new BetDTO($input);
 
+            if ($bet->amount < 1 || $bet->amount > 500) {
+                $response = ['success' => false, 'message' => 'Сумма ставки должна быть в пределах от 1 до 500 единиц.'];
+                $this->db->rollBack();
+                $this->returnResponse($response);
+            }
+
             $stmt = $this->pdo->prepare("SELECT amount 
                                                 FROM client_balance 
                                                 WHERE client_id = :client_id AND currency = :currency");
